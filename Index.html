@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crypto Miner</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<header>
+    <div class="switch-toggle-container">
+        <div class="switch-toggle switch-3 switch-candy text">
+            <input id="1x" name="state-d" type="radio" checked="checked"/>
+            <label for="1x" onclick="updateAllPrices(1)">1x</label>
+            <input id="5x" name="state-d" type="radio"/>
+            <label for="5x" onclick="updateAllPrices(5)">5x</label>
+            <input id="10x" name="state-d" type="radio"/>
+            <label for="10x" onclick="updateAllPrices(10)">10x</label>
+        </div>
+    </div>
+    <p id="Title" class="text bold">Idle Tycoon Game</p>
+    <div>
+        <div class="IconsHeaderBox">
+            <button id="save" class="IconsHeader" onclick="saveData()">
+                <img src="Images/Save.png" class="img" alt="">
+            </button>
+            <button id="SettingsOpener" onclick="openSettings()">
+                <img src="Images/Settings.png" class="img" alt="">
+            </button>
+        </div>
+    </div>
+
+</header>
+
+<p id="Balance" class="text">Balance: 0$</p>
+
+<div id="MinerFlex">
+    <div id="AddButton" style="order: 1000"></div>
+</div>
+
+
+<div id="settings">
+    <button id="settingsCloser" onclick="closeSettings()">
+        <img src="Images/X.png"></img>
+    </button>
+    <button id="delete" class="IconsHeader" onclick="confirmDelete()">
+        <img src="Images/delete.png" class="img" alt="">
+    </button>
+
+    <div id="confirmChoice">
+        <h2 id="confirmText">Are you sure you want to delete your progress?</h2>
+        <button id="confirm" onclick="deleteCookieData()">
+            <img src="Images/Check.png">
+        </button>
+        <button id="cancel" onclick="cancelDelete()">
+            <img src="Images/X.png"></img>
+        </button>
+    </div>
+</div>
+
+<script src="Miner.js"></script>
+<script src="Script.js"></script>
+
+
+</body>
+</html>

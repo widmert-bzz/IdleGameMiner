@@ -1,0 +1,367 @@
+:root {
+    --textColor: white;
+
+    --borderColor: #7a93ef;
+    --borderColorBright: #9ab3ff;
+
+    --containerBackgroundColor: #443C68;
+    --containerBackgroundColorBright: #544c78;
+
+    --upgradeButtonColor: #393053;
+    --upgradeButtonColor-hover: #494063;
+
+    --backgroundColor: #18122B;
+    --backgroundColor2: #1b152f;
+
+    --headerHeight: 100px
+}
+
+header {
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: nowrap;
+
+
+    width: 100%;
+    height: var(--headerHeight);
+    position: relative;
+
+    background: var(--containerBackgroundColor);
+    padding-top: 1px;
+    border-bottom: solid 6px var(--borderColor);
+}
+
+#Balance{
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+}
+
+#Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    flex-grow: 1;
+}
+
+body {
+    background: linear-gradient(var(--backgroundColor), var(--backgroundColor2), var(--backgroundColor)) 0 100%;
+    margin: 0;
+    width: 100%;
+}
+
+.IconsHeader {
+    width: 80px;
+    background: none;
+    border: none;
+}
+
+.IconsHeaderBox {
+    top: 0;
+    right: 0;
+
+    height: var(--headerHeight);
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-right: 20px;
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.img {
+    width: 80px;
+    height: 80px;
+}
+
+.text {
+    font-family: "Source Code Pro", sans-serif;
+    color: var(--textColor);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#MinerFlex {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+
+    gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.container {
+    --borderColorStatus: var(--borderColor);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    border: 8px solid var(--borderColor);
+    background: var(--containerBackgroundColor);
+    border-radius: 15px;
+
+    transition: border-color .8s, background-color .8s;
+
+    animation-name: appear;
+    animation-duration: .3s;
+    animation-timing-function: linear;
+    flex-grow: 1;
+    flex-basis: 310px;
+    max-width: 620px;
+    box-shadow: var(--borderColorStatus) 0 0 5px;
+}
+
+.name {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: var(--textColor);
+    font-size: x-large;
+}
+
+.upgrade {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--upgradeButtonColor);
+    border: 0 solid;
+    color: var(--textColor);
+    cursor: pointer;
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.level {
+    position: absolute;
+    top: -4px;
+    right: -5px;
+    color: var(--textColor);
+    font-size: x-large;
+    background: var(--borderColorStatus);
+    border-radius: 5px;
+    width: 50px;
+    text-align: center;
+    transition: background-color .8s;
+
+}
+
+.MPS {
+    position: absolute;
+    color: var(--textColor);
+    font-size: small;
+    top: 35px;
+    left: 12px;
+}
+
+#newMinerButton {
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    transition: color 5s;
+    border-radius: 15px;
+    transition-duration: .5s;
+    transition-property: background-color, border-color, color, fill, stroke;
+    animation-timing-function: linear;
+}
+
+#AddButton {
+    --borderColorStatus: var(--borderColor);
+
+    position: relative;
+    height: 200px;
+    border: 8px solid #303040;
+    background: #404050;
+    border-radius: 15px;
+
+    flex-grow: 1;
+    flex-basis: 310px;
+    max-width: 620px;
+    opacity: 0.6;
+
+}
+
+.icon {
+    position: absolute;
+    width: 140px;
+    transition: opacity .3s ease-in-out, width .3s ease-in-out;
+}
+
+.transparent {
+    opacity: 0;
+    width: 0;
+}
+
+#newMinerButton:hover {
+    background: #505060;
+    cursor: pointer;
+}
+
+#newMinerButton:active {
+    background: var(--upgradeButtonColor-hover);
+    color: black;
+}
+
+.upgrade:hover:enabled {
+    cursor: pointer;
+    background-color: var(--upgradeButtonColor-hover);
+}
+
+.upgrade:active:enabled {
+    background: var(--upgradeButtonColor-hover);
+    color: black;
+}
+
+.container:hover {
+    --borderColorStatus: var(--borderColorBright);
+    border-color: var(--borderColorStatus);
+    background-color: var(--containerBackgroundColorBright);
+}
+
+.switch-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    width: 150px;
+    flex-shrink: 0;
+
+}
+
+.switch-toggle {
+    top: 0;
+    left: 0;
+    float: left;
+    background: var(--upgradeButtonColor);
+    border: var(--borderColor) 6px solid;
+    border-radius: 10px;
+}
+
+.switch-toggle input {
+    position: absolute;
+    opacity: 0;
+}
+
+.switch-toggle input + label {
+    padding: 10px;
+    float: left;
+    color: var(--textColor);
+    cursor: pointer;
+}
+
+.switch-toggle input:checked + label {
+    background: #746c98;
+    border-radius: 4px;
+    transition: background-color 1s;
+}
+
+@media only screen and (max-width: 800px) {
+    #Title {
+        display: none;
+    }
+}
+
+#delete {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+
+}
+
+#save {
+    cursor: pointer;
+}
+
+#SettingsOpener{
+    border: none;
+    background: none;
+}
+
+#settings {
+    display: flex;
+    justify-self: center;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+
+    height: 60%;
+    width: 50%;
+    max-height: 700px;
+    min-height: 300px;
+    border: 8px solid var(--borderColor);
+    background: var(--containerBackgroundColor);
+    border-radius: 15px;
+}
+
+#settingsCloser {
+    background: transparent;
+    border: transparent;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+#confirmChoice {
+    height: 200px;
+    width: 300px;
+    border: 8px solid var(--borderColor);
+    background: var(--containerBackgroundColor);
+    border-radius: 15px;
+    z-index: 10;
+    position: absolute;
+    top: 33%;
+    left: 33%;
+}
+
+#confirm {
+    border: 4px solid var(--borderColor);
+    background: var(--containerBackgroundColor);
+    border-radius: 15px;
+    position: absolute;
+    right: 80%;
+    top: 55%;
+    cursor: pointer;
+
+}
+
+#cancel {
+    border: 4px solid var(--borderColor);
+    background: var(--containerBackgroundColor);
+    border-radius: 15px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    cursor: pointer;
+}
+
+#confirmText {
+    color: white;
+    margin-left: 5%;
+}
